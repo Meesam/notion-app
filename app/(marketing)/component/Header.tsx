@@ -16,8 +16,11 @@ const Header = () => {
         <Link href="">Pricing</Link>
       </div>
       <div className=" ml-auto space-x-6 pr-5">
+        <Link href="/sign-in">Sign In</Link>
         <Link href="">Request a demo</Link>
-        <Button>Get Notion free</Button>
+        <Button>
+          <Link href="/sign-up">Get Notion free</Link>
+        </Button>
       </div>
     </nav>
   );

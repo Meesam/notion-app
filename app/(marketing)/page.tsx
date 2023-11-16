@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const MarketingPage = () => {
   return (
@@ -13,7 +14,7 @@ const MarketingPage = () => {
           Notion is the connected workspace where better, faster work happens.
         </h3>
         <Button className="mt-5">
-          Get Notion free
+          <Link href="/sign-up">Get Notion free</Link>
           <ArrowRight className="mx-2 h-4 w-4" />
         </Button>
         <div className="mt-10">
