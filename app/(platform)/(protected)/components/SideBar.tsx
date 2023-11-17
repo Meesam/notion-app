@@ -1,6 +1,8 @@
 import { UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs";
 import NavTree from "./NavTree";
+import SystemNav from "./SystemNav";
+import TemplateNav from "./TemplateNav";
 
 const SideBar = async () => {
   const user = await currentUser();
@@ -13,7 +15,13 @@ const SideBar = async () => {
           <p>{`${user?.firstName} ${user?.lastName}`}</p>
         </div>
         <div className="mt-5">
+          <SystemNav />
+        </div>
+        <div className="mt-5">
           <NavTree />
+        </div>
+        <div className="mt-5">
+          <TemplateNav />
         </div>
       </div>
     </div>

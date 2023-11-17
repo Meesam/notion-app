@@ -43,7 +43,7 @@ const initialData = [
   },
   {
     name: "Personal Home",
-    children: [],
+    children: [7, 8, 9, 10],
     id: 3,
     parent: 0,
     isBranch: true,
@@ -70,10 +70,32 @@ const initialData = [
     isBranch: true,
   },
   {
-    name: "Sub Page",
+    name: "Movie List",
     children: [],
     id: 7,
-    parent: 2,
+    parent: 3,
+    isBranch: true,
+  },
+  {
+    name: "Recipes",
+    children: [],
+    id: 8,
+    parent: 3,
+    isBranch: true,
+  },
+  {
+    name: "Yearly Goals",
+    children: [],
+    id: 9,
+    parent: 3,
+    isBranch: true,
+  },
+  {
+    name: "Travel Plans",
+    children: [],
+    id: 10,
+    parent: 3,
+    isBranch: true,
   },
 ];
 
