@@ -2,11 +2,8 @@
 
 import React, { useRef, useState } from "react";
 import { FaSquare, FaCheckSquare, FaMinusSquare } from "react-icons/fa";
-import { IoMdArrowDropright } from "react-icons/io";
 import { AiOutlineLoading } from "react-icons/ai";
 import TreeView, { ITreeViewOnLoadDataProps } from "react-accessible-treeview";
-import cx from "classnames";
-import "./styles.css";
 import {
   Plus,
   MoreHorizontal,

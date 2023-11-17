@@ -8,7 +8,7 @@ const SideBar = async () => {
   const user = await currentUser();
 
   return (
-    <div className="w-60 bg-slate-200 p-3 border-r-2">
+    <div className="w-60 bg-slate-100 p-3 border-r-1">
       <div className="flex-col">
         <div className="flex space-x-2">
           <UserButton afterSignOutUrl="/" />
