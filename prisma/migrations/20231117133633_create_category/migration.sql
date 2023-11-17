@@ -1,10 +1,11 @@
 -- CreateTable
 CREATE TABLE "Category" (
     "id" SERIAL NOT NULL,
-    "title" VARCHAR(255) NOT NULL,
-    "description" TEXT NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
+    "parent" INTEGER NOT NULL DEFAULT 0,
+    "isBranch" BOOLEAN NOT NULL DEFAULT true,
     "status" VARCHAR(100) NOT NULL,
-    "userId" INTEGER NOT NULL,
+    "userId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
@@ -14,11 +15,12 @@ CREATE TABLE "Category" (
 -- CreateTable
 CREATE TABLE "SubCategory" (
     "id" SERIAL NOT NULL,
-    "subCategoryId" INTEGER NOT NULL,
-    "title" VARCHAR(255) NOT NULL,
-    "description" TEXT NOT NULL,
+    "categoryId" INTEGER NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
+    "parent" INTEGER NOT NULL,
+    "isBranch" BOOLEAN NOT NULL DEFAULT true,
     "status" VARCHAR(100) NOT NULL,
-    "userId" INTEGER NOT NULL,
+    "userId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
@@ -26,4 +28,4 @@ CREATE TABLE "SubCategory" (
 );
 
 -- AddForeignKey
-ALTER TABLE "SubCategory" ADD CONSTRAINT "SubCategory_subCategoryId_fkey" FOREIGN KEY ("subCategoryId") REFERENCES "Category"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "SubCategory" ADD CONSTRAINT "SubCategory_categoryId_fkey" FOREIGN KEY ("categoryId") REFERENCES "Category"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
